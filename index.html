@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things I Want - Christmas List</title>
+
+    <style>
+        /* =========================
+           GENERAL STYLING
+        ========================= */
+
+        :root {
+            --background: #242426;
+            --card: #303034;
+            --card-hover: #39393e;
+            --purple: #b697c2;
+            --mint: #bbddd1;
+            --white: #f4f2f5;
+            --muted: #aaa6ad;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--white);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            padding: 50px 7%;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: var(--purple);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 3px;
+            background: var(--mint);
+            margin: 22px auto 0;
+            border-radius: 5px;
+        }
+
+        /* =========================
+           ITEM GRID
+        ========================= */
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        /* =========================
+           INDIVIDUAL GIFT CARDS
+        ========================= */
+
+        .gift-card {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #45434a;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .gift-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        /* IMAGE */
+
+        .gift-image {
+            width: 100%;
+            height: 220px;
+            background: #252529;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: var(--muted);
+        }
+
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+        }
+
+        /* CARD CONTENT */
+
+        .gift-content {
+            padding: 20px;
+        }
+
+        .gift-content h2 {
+            font-size: 21px;
+            margin-bottom: 12px;
+            color: var(--mint);
+        }
+
+        .gift-content p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #d0cdd2;
+            margin-bottom: 18px;
+        }
+
+        /* LINKS */
+
+        .gift-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gift-links a {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--purple);
+            color: #252229;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .gift-links a:hover {
+            background: var(--mint);
+            transform: translateY(-2px);
+        }
+
+        .gift-links a.secondary {
+            background: transparent;
+            border: 1px solid var(--mint);
+            color: var(--mint);
+        }
+
+        .gift-links a.secondary:hover {
+            background: var(--mint);
+            color: #252229;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--purple);
+        }
+
+        /* =========================
+           MOBILE LAYOUT
+        ========================= */
+
+        @media (max-width: 900px) {
+            .gift-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 35px 5%;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .gift-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>Things I Want</h1>
+        <p>A little collection of things I'd like for Christmas.</p>
+        <div class="header-line"></div>
+    </header>
+
+
+    <!--
+    ==================================
+    CHRISTMAS LIST
+
+    To add another item, copy an entire
+    gift-card section and paste it below.
+
+    ==================================
+    -->
+
+    <main class="gift-grid">
+
+
+        <!-- ITEM 1 -->
+
+        <article class="gift-card">
+
+            <div class="gift-image">
+                <!-- Replace the image path with your own image -->
+                <img src="images/item1.jpg" alt="Item 1">
+            </div>
+
+            <div class="gift-content">
+
+                <h2>Example Manga</h2>
+
+                <p>
+                    I'd really like to collect this manga series.
+
+                    <br><br>
+
+                    I already own volumes 1, 2, 3 and 4.
+                    Looking for volumes 5 onwards.
+                </p>
+
+                <div class="gift-links">
+                    <a href="https://www.amazon.co.uk/"
+                       target="_blank">
+                        Amazon
+                    </a>
+
+                    <a href="#"
+                       target="_blank"
+                       class="secondary">
+                        Alternative
+                    </a>
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- ITEM 2 -->
+
+        <article class="gift-card">
+
+            <div class="gift-image">
+                <img src="images/item2.jpg" alt="Item 2">
+            </div>
+
+            <div class="gift-content">
+
+                <h2>Example Headphones</h2>
+
+                <p>
+                    A new pair of headphones.
+
+                    <br><br>
+
+                    Preferably this particular model,
+                    although other colours are fine.
+                </p>
+
+                <div class="gift-links">
+                    <a href="https://www.amazon.co.uk/"
+                       target="_blank">
+                        Amazon
+                    </a>
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- ITEM 3 -->
+
+        <article class="gift-card">
+
+            <div class="gift-image">
+                <img src="images/item3.jpg" alt="Item 3">
+            </div>
+
+            <div class="gift-content">
+
+                <h2>Example Item</h2>
+
+                <p>
+                    Put a description of what you want here.
+
+                    <br><br>
+
+                    You can also include specific details
+                    about the item.
+                </p>
+
+                <div class="gift-links">
+                    <a href="https://www.amazon.co.uk/"
+                       target="_blank">
+                        Amazon
+                    </a>
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- COPY AND PASTE THIS SECTION TO ADD MORE ITEMS -->
+
+        <article class="gift-card">
+
+            <div class="gift-image">
+                <img src="images/item4.jpg" alt="Item 4">
+            </div>
+
+            <div class="gift-content">
+
+                <h2>Another Example</h2>
+
+                <p>
+                    Write whatever information you want here.
+                </p>
+
+                <div class="gift-links">
+                    <a href="https://www.amazon.co.uk/"
+                       target="_blank">
+                        Amazon
+                    </a>
+                </div>
+
+            </div>
+        </article>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        Made with a little bit of <span>Christmas spirit</span>.
+    </footer>
+
+</body>
+</html>
